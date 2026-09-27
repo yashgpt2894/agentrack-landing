@@ -181,7 +181,13 @@ h1,h2,h3{font-weight:700;letter-spacing:-.028em;line-height:1.08;text-wrap:balan
 .bar-live{fill:var(--lamp-live)}
 .mark__word{font-weight:700;font-size:1.02rem;letter-spacing:-.022em}
 .mark__r{color:var(--lamp-live)}
-.nav{display:flex;gap:clamp(.8rem,1.8vw,1.7rem);margin-left:auto}
+/* Source order serves the mobile panel; desktop order is restored explicitly so the
+   primary action stays rightmost. */
+.mark{order:1}
+.nav{order:2;display:flex;gap:clamp(.8rem,1.8vw,1.7rem);margin-left:auto}
+.beta{order:3}
+.busbar__cta{order:4}
+.menubtn{order:5}
 .nav a{
   color:var(--muted-on-plate);text-decoration:none;font-size:.89rem;font-weight:500;
   padding:.4rem 0;border-bottom:1px solid transparent;transition:color .18s ease,border-color .18s ease;
