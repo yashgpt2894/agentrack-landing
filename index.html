@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentRack — See every AI agent in your enterprise</title>
+<meta name="description" content="AgentRack finds every AI agent running across your enterprise — who built it, what it costs, where it overlaps — and turns sprawl into a single control plane.">
+<meta name="theme-color" content="#A9B79F">
+<meta property="og:title" content="AgentRack — Your AI agents are multiplying. Your visibility isn’t.">
+<meta property="og:description" content="Discover, audit and optimise every AI agent across your organisation. Free agent audit for the first 20 enterprise teams.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.agentrack.io/">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/Archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-radar" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6"/>
+    <path d="M12 12 18.6 5.4"/><rect x="16.4" y="8.2" width="1.7" height="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.6 9.4 18 20 6.4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24">
+    <path d="M12 3.6 21.2 19.8H2.8z"/><path d="M12 9.4v4.4"/>
+    <rect x="11.15" y="16.4" width="1.7" height="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3.6 12h16"/><path d="M13.4 5.8 19.6 12l-6.2 6.2"/></symbol>
+  <symbol id="i-trace" viewBox="0 0 24 24">
+    <path d="M3.4 6.2h5.2a3.4 3.4 0 0 1 3.4 3.4v4.8a3.4 3.4 0 0 0 3.4 3.4h5.2"/>
+    <path d="M3.4 17.8h4"/><path d="M16.6 6.2h4"/>
+  </symbol>
+</svg>
+
+<header class="busbar">
+  <div class="busbar__in">
+    <a class="mark" href="#top" aria-label="AgentRack, back to top">
+      <svg class="mark__glyph" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="4" y="7" width="36" height="7" rx="2.5" class="bar-dim"/>
+        <rect x="4" y="18.5" width="36" height="7" rx="2.5" class="bar-live"/>
+        <rect x="4" y="30" width="36" height="7" rx="2.5" class="bar-dim"/>
+      </svg>
+      <span class="mark__word">Agent<span class="mark__r">Rack</span></span>
+    </a>
+    <p class="beta"><span class="lamp lamp--live" aria-hidden="true"></span>Private beta · limited spots</p>
+    <a class="btn btn--teal btn--sm busbar__cta" href="#audit">Get your free audit</a>
+    <button class="menubtn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">
+      <span class="menubtn__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="menubtn__text">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#who">Who it’s for</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a class="nav__cta" href="#audit">Get your free audit<span class="nav__nospan"> — free for the first 20 teams</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="door" id="top">
+  <div class="wrap door__grid">
+    <div class="leaf">
+      <h1 class="door__h1">Your AI agents are multiplying.<br><em>Your visibility isn’t.</em></h1>
+      <p class="lede">Every team is shipping agents on Claude, GPT and Gemini. Nobody can see them all. AgentRack finds every agent in your enterprise — <strong>who built it, what it costs, where it overlaps</strong> — and turns sprawl into one control plane.</p>
+      <div class="actions">
+        <a class="btn btn--ink" href="#audit"><svg class="ico" aria-hidden="true"><use href="#i-radar"></use></svg>Get your free agent audit</a>
+        <a class="btn btn--ghost" href="#how">See how it works</a>
+      </div>
+      <dl class="terms">
+        <div><dt>Terms</dt><dd>Free for the first 20 enterprise teams</dd></div>
+        <div><dt>Commitment</dt><dd>None. No sales calls unless you ask</dd></div>
+      </dl>
+    </div>
+
+    <div class="hinge" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <div class="interior">
+      <div class="board board--hero">
+        <p class="board__plate">agent control plane</p>
+        <div class="board__head">
+          <div>
+            <p class="board__title">Agent control plane</p>
+            <p class="board__meta">Acme Corp · 18 agents across 12 teams</p>
+          </div>
+          <p class="live"><span class="lamp lamp--live" aria-hidden="true"></span>Live monitoring</p>
+        </div>
+        <div class="readouts">
+          <div class="readout"><p class="readout__k">Total agents</p><p class="readout__v">18</p><p class="readout__d">2 found by discovery scan</p></div>
+          <div class="readout"><p class="readout__k">Redundant</p><p class="readout__v readout__v--warn">6</p><p class="readout__d">doing overlapping work</p></div>
+          <div class="readout"><p class="readout__k">Recoverable</p><p class="readout__v readout__v--warn">€1,535</p><p class="readout__d">per month, duplicate spend</p></div>
+          <div class="readout"><p class="readout__k">Debt score</p><p class="readout__v readout__v--warn">55</p><p class="readout__d">/ 100 · moderate risk</p></div>
+        </div>
+        <div class="tablewrap">
+          <table class="registry registry--hero">
+            <caption class="sr">Extract from the AgentRack registry: four agents from a twelve-team estate, with semantic overlap and current status.</caption>
+            <thead>
+              <tr><th scope="col">Agent name</th><th scope="col">Team</th><th scope="col">Platform</th><th scope="col">Overlap</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--warn" aria-hidden="true"></span>ProcureBot v2</th>
+                <td class="c-quiet" data-l="Team">Procurement</td>
+                <td class="c-quiet" data-l="Platform">Claude</td>
+                <td class="c-overlap" data-l="Overlap"><span class="bar" role="img" aria-label="78 percent semantic overlap"><span class="bar__fill bar__fill--warn" style="--v:78%"></span></span><span class="pct pct--warn">78%</span></td>
+                <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></th>
+              </tr>
+              <tr>
+                <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--warn" aria-hidden="true"></span>SupplierScout</th>
+                <td class="c-quiet" data-l="Team">Supply Chain</td>
+                <td class="c-quiet" data-l="Platform">GPT-4o</td>
+                <td class="c-overlap" data-l="Overlap"><span class="bar" role="img" aria-label="78 percent semantic overlap"><span class="bar__fill bar__fill--warn" style="--v:78%"></span></span><span class="pct pct--warn">78%</span></td>
+                <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></th>
+              </tr>
+              <tr>
+                <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--fault" aria-hidden="true"></span>InvoiceAI</th>
+                <td class="c-quiet" data-l="Team">Finance</td>
+                <td class="c-quiet" data-l="Platform">Gemini</td>
+                <td class="c-overlap" data-l="Overlap"><span class="bar" role="img" aria-label="22 percent semantic overlap"><span class="bar__fill bar__fill--fault" style="--v:22%"></span></span><span class="pct pct--fault">22%</span></td>
+                <td class="c-status" data-l="Status"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="status">Scope drift</span></th>
+              </tr>
+              <tr>
+                <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span>HR Screener</th>
+                <td class="c-quiet" data-l="Team">HR</td>
+                <td class="c-quiet" data-l="Platform">Claude</td>
+                <td class="c-overlap" data-l="Overlap"><span class="bar" role="img" aria-label="11 percent semantic overlap"><span class="bar__fill bar__fill--none" style="--v:11%"></span></span><span class="pct pct--ok">11%</span></td>
+                <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--plate" id="refs" aria-labelledby="refs-h">
+  <div class="wrap">
+    <h2 class="h2" id="refs-h">The estate is growing faster than the record of it.</h2>
+    <div class="tablewrap">
+      <table class="refs">
+        <caption class="sr">Four published market findings. Where the original publication named no source, the source column is empty.</caption>
+        <thead>
+          <tr><th scope="col">Figure</th><th scope="col">Finding</th><th scope="col">Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="refs__fig">150<span>k</span></th><td>agents projected per Fortune 500 company by 2028</td><td class="refs__src">Gartner</td></tr>
+          <tr><th scope="row" class="refs__fig">80<span>%</span></th><td>of enterprises already report risky behaviour from live agents</td><td class="refs__src">McKinsey</td></tr>
+          <tr><th scope="row" class="refs__fig">65<span>%</span></th><td>say AI adoption is moving faster than their ability to understand it</td><td class="refs__src"><span aria-hidden="true">—</span><span class="sr">No source stated</span></td></tr>
+          <tr><th scope="row" class="refs__fig">26<span>%</span></th><td>have a comprehensive AI governance policy in place today</td><td class="refs__src"><span aria-hidden="true">—</span><span class="sr">No source stated</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--field" id="product" aria-labelledby="product-h">
+  <div class="wrap">
+    <h2 class="h2" id="product-h">One rack. Every agent.</h2>
+    <p class="lede lede--narrow">The registry, the overlap, the drift and the cost — on one screen, refreshed continuously. Run the discovery scan and the two agents nobody registered appear in the register.</p>
+
+    <div class="board" data-board>
+      <p class="board__plate">agent registry</p>
+      <div class="board__head">
+        <div>
+          <p class="board__title">Agent registry</p>
+          <p class="board__meta">Acme Corp · <span data-estate>16 agents across 12 teams</span></p>
+        </div>
+        <p class="live"><span class="lamp lamp--live" aria-hidden="true"></span>Live monitoring</p>
+      </div>
+
+      <div class="readouts readouts--five">
+        <div class="readout"><p class="readout__k">Total agents</p><p class="readout__v" data-k="total">16</p><p class="readout__d" data-k="total-note">across 12 teams</p></div>
+        <div class="readout"><p class="readout__k">Redundant</p><p class="readout__v readout__v--warn" data-k="redundant">5</p><p class="readout__d">doing overlapping work</p></div>
+        <div class="readout"><p class="readout__k">Drifted</p><p class="readout__v readout__v--fault" data-k="drifted">2</p><p class="readout__d">outside original scope</p></div>
+        <div class="readout"><p class="readout__k">Recoverable</p><p class="readout__v readout__v--warn" data-k="waste">€1,415</p><p class="readout__d">per month, duplicate spend</p></div>
+        <div class="readout"><p class="readout__k">Debt score</p><p class="readout__v" data-k="score">64</p><p class="readout__d">/ 100 · higher is healthier</p></div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn--teal btn--sm" type="button" id="scan" aria-describedby="scan-note">
+          <svg class="ico" aria-hidden="true"><use href="#i-radar"></use></svg><span id="scan-label">Run discovery scan</span>
+        </button>
+        <p class="controls__note" id="scan-note" role="status" aria-live="polite">16 positions registered. Two are live but unlisted.</p>
+        <noscript><p class="controls__note">The discovery scan needs JavaScript. The register below lists the 16 agents that are registered; the two unregistered agents are not on it.</p></noscript>
+        <div class="filters" role="group" aria-label="Filter the registry by status">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="redundant" aria-pressed="false"><span class="lamp lamp--warn" aria-hidden="true"></span>Redundant</button>
+          <button type="button" class="chip" data-filter="drift" aria-pressed="false"><span class="lamp lamp--fault" aria-hidden="true"></span>Scope drift</button>
+          <button type="button" class="chip" data-filter="idle" aria-pressed="false"><span class="lamp lamp--off" aria-hidden="true"></span>Idle</button>
+          <button type="button" class="chip" data-filter="healthy" aria-pressed="false"><span class="lamp lamp--ok" aria-hidden="true"></span>Healthy</button>
+        </div>
+      </div>
+
+      <div class="tablewrap tablewrap--tall">
+        <div class="tablewrap__inner">
+          <svg class="trace" aria-hidden="true" focusable="false"></svg>
+          <table class="registry" id="registry">
+            <caption class="sr">The AgentRack registry for a sample estate: each agent with its status, team, platform, monthly cost, call volume, owner and purpose.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Agent name</th><th scope="col">Status</th><th scope="col">Team</th>
+                <th scope="col">Platform</th><th scope="col" class="num">Monthly</th><th scope="col" class="num">Calls</th>
+                <th scope="col">Owner</th><th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr data-status="redundant" data-shadow="0" data-cluster="supplier-outreach">
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">ProcureBot v2</span><span class="sub">cluster: supplier-outreach</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Procurement</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€620</td>
+              <td class="num" data-l="Calls">4,100</td>
+              <td class="c-quiet" data-l="Owner">M. van der Berg</td>
+              <td class="c-purpose" data-l="Purpose">Drafts RFQs and supplier outreach emails for sourcing events</td>
+            </tr>
+            <tr data-status="redundant" data-shadow="0" data-cluster="supplier-outreach">
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">SupplierScout</span><span class="sub">cluster: supplier-outreach</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Supply Chain</td>
+              <td class="c-quiet" data-l="Platform">GPT-4o</td>
+              <td class="num" data-l="Monthly">€540</td>
+              <td class="num" data-l="Calls">3,600</td>
+              <td class="c-quiet" data-l="Owner">J. Bakker</td>
+              <td class="c-purpose" data-l="Purpose">Identifies and contacts suppliers for upcoming sourcing events</td>
+            </tr>
+            <tr data-status="redundant" data-shadow="0" data-cluster="meeting-summary">
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">MeetingMind</span><span class="sub">cluster: meeting-summary</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Sales</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€380</td>
+              <td class="num" data-l="Calls">5,200</td>
+              <td class="c-quiet" data-l="Owner">S. de Vries</td>
+              <td class="c-purpose" data-l="Purpose">Summarizes customer meeting notes and extracts action items</td>
+            </tr>
+            <tr data-status="redundant" data-shadow="0" data-cluster="meeting-summary">
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">NotesBot</span><span class="sub">cluster: meeting-summary</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Marketing</td>
+              <td class="c-quiet" data-l="Platform">GPT-4o</td>
+              <td class="num" data-l="Monthly">€290</td>
+              <td class="num" data-l="Calls">3,900</td>
+              <td class="c-quiet" data-l="Owner">L. Janssen</td>
+              <td class="c-purpose" data-l="Purpose">Summarizes internal meeting recordings into shareable notes</td>
+            </tr>
+            <tr data-status="redundant" data-shadow="0" data-cluster="meeting-summary">
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">StandupGPT</span><span class="sub">cluster: meeting-summary</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Engineering</td>
+              <td class="c-quiet" data-l="Platform">LangChain</td>
+              <td class="num" data-l="Monthly">€310</td>
+              <td class="num" data-l="Calls">4,400</td>
+              <td class="c-quiet" data-l="Owner">A. Kowalski</td>
+              <td class="c-purpose" data-l="Purpose">Summarizes daily standups and posts highlights to Slack</td>
+            </tr>
+            <tr data-status="drift" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="agentname">InvoiceAI</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="status">Scope drift</span></td>
+              <td class="c-quiet" data-l="Team">Finance</td>
+              <td class="c-quiet" data-l="Platform">Gemini</td>
+              <td class="num" data-l="Monthly">€450</td>
+              <td class="num" data-l="Calls">2,800</td>
+              <td class="c-quiet" data-l="Owner">P. Hendriks</td>
+              <td class="c-purpose" data-l="Purpose">Matches supplier invoices to purchase orders</td>
+            </tr>
+            <tr data-status="drift" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="agentname">ChurnSense</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="status">Scope drift</span></td>
+              <td class="c-quiet" data-l="Team">Customer Success</td>
+              <td class="c-quiet" data-l="Platform">GPT-4o</td>
+              <td class="num" data-l="Monthly">€520</td>
+              <td class="num" data-l="Calls">1,900</td>
+              <td class="c-quiet" data-l="Owner">R. Smit</td>
+              <td class="c-purpose" data-l="Purpose">Flags at-risk accounts from support ticket sentiment</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">HR Screener</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">HR</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€410</td>
+              <td class="num" data-l="Calls">2,200</td>
+              <td class="c-quiet" data-l="Owner">E. Visser</td>
+              <td class="c-purpose" data-l="Purpose">Screens inbound CVs against role requirements</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">ContractGuard</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">Legal</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€680</td>
+              <td class="num" data-l="Calls">950</td>
+              <td class="c-quiet" data-l="Owner">T. Mulder</td>
+              <td class="c-purpose" data-l="Purpose">Reviews NDAs and flags non-standard clauses</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">TicketTriage</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">IT Support</td>
+              <td class="c-quiet" data-l="Platform">Gemini</td>
+              <td class="num" data-l="Monthly">€230</td>
+              <td class="num" data-l="Calls">6,800</td>
+              <td class="c-quiet" data-l="Owner">D. Peters</td>
+              <td class="c-purpose" data-l="Purpose">Categorizes and routes internal IT tickets</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">LeadQualifier</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">Sales</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€350</td>
+              <td class="num" data-l="Calls">3,100</td>
+              <td class="c-quiet" data-l="Owner">S. de Vries</td>
+              <td class="c-purpose" data-l="Purpose">Scores inbound leads against ICP criteria</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">DataDocBot</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">Engineering</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€290</td>
+              <td class="num" data-l="Calls">1,700</td>
+              <td class="c-quiet" data-l="Owner">A. Kowalski</td>
+              <td class="c-purpose" data-l="Purpose">Generates documentation from code repositories</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">CampaignCopy</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">Marketing</td>
+              <td class="c-quiet" data-l="Platform">GPT-4o</td>
+              <td class="num" data-l="Monthly">€470</td>
+              <td class="num" data-l="Calls">2,600</td>
+              <td class="c-quiet" data-l="Owner">L. Janssen</td>
+              <td class="c-purpose" data-l="Purpose">Drafts campaign copy variants for A/B testing</td>
+            </tr>
+            <tr data-status="idle" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--off" aria-hidden="true"></span><span class="agentname">SpendAnalyzer</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--off" aria-hidden="true"></span><span class="status">Idle</span></td>
+              <td class="c-quiet" data-l="Team">Finance</td>
+              <td class="c-quiet" data-l="Platform">CrewAI</td>
+              <td class="num" data-l="Monthly">€180</td>
+              <td class="num" data-l="Calls">0</td>
+              <td class="c-quiet" data-l="Owner"><span class="unassigned">—<span class="sr"> unassigned</span></span></td>
+              <td class="c-purpose" data-l="Purpose">Monthly spend anomaly detection across cost centers</td>
+            </tr>
+            <tr data-status="idle" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--off" aria-hidden="true"></span><span class="agentname">PolicyPal</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--off" aria-hidden="true"></span><span class="status">Idle</span></td>
+              <td class="c-quiet" data-l="Team">HR</td>
+              <td class="c-quiet" data-l="Platform">Gemini</td>
+              <td class="num" data-l="Monthly">€95</td>
+              <td class="num" data-l="Calls">12</td>
+              <td class="c-quiet" data-l="Owner"><span class="unassigned">—<span class="sr"> unassigned</span></span></td>
+              <td class="c-purpose" data-l="Purpose">Answers employee policy questions from the handbook</td>
+            </tr>
+            <tr data-status="healthy" data-shadow="0">
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="agentname">AuditTrailGen</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--ok" aria-hidden="true"></span><span class="status">Healthy</span></td>
+              <td class="c-quiet" data-l="Team">Compliance</td>
+              <td class="c-quiet" data-l="Platform">Claude</td>
+              <td class="num" data-l="Monthly">€240</td>
+              <td class="num" data-l="Calls">800</td>
+              <td class="c-quiet" data-l="Owner">K. Meijer</td>
+              <td class="c-purpose" data-l="Purpose">Compiles agent activity logs into audit-ready reports</td>
+            </tr>
+            <tr data-status="drift" data-shadow="1" hidden>
+              <th scope="row" class="c-agent" data-l="Agent"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="agentname">QuoteWizard</span><span class="sub sub--warn">shadow agent · found via unregistered API key</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--fault" aria-hidden="true"></span><span class="status">Scope drift</span></td>
+              <td class="c-quiet" data-l="Team">Sales</td>
+              <td class="c-quiet" data-l="Platform">GPT-4o</td>
+              <td class="num" data-l="Monthly">€340</td>
+              <td class="num" data-l="Calls">1,400</td>
+              <td class="c-quiet" data-l="Owner"><span class="unassigned">—<span class="sr"> unassigned</span></span></td>
+              <td class="c-purpose" data-l="Purpose">Generates pricing quotes from CRM data — discovered via unregistered API key</td>
+            </tr>
+            <tr data-status="redundant" data-shadow="1" data-cluster="meeting-summary" hidden>
+              <th scope="row" class="c-agent" data-l="Agent" tabindex="0"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="agentname">SlackDigest</span><span class="sub">cluster: meeting-summary</span></th>
+              <td class="c-status" data-l="Status"><span class="lamp lamp--warn" aria-hidden="true"></span><span class="status">Redundant</span></td>
+              <td class="c-quiet" data-l="Team">Engineering</td>
+              <td class="c-quiet" data-l="Platform">LangChain</td>
+              <td class="num" data-l="Monthly">€120</td>
+              <td class="num" data-l="Calls">2,900</td>
+              <td class="c-quiet" data-l="Owner"><span class="unassigned">—<span class="sr"> unassigned</span></span></td>
+              <td class="c-purpose" data-l="Purpose">Daily channel digests — discovered via webhook registration scan</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="morebtn" type="button" id="registry-more" aria-controls="registry">Show the other 12 agents</button>
+      <p class="board__foot">Sample estate. Every figure on this board is computed from the rows above.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--field-deep" aria-labelledby="caps-h">
+  <div class="wrap">
+    <h2 class="h2" id="caps-h">Six ways to stop flying blind on AI.</h2>
+    <p class="lede lede--narrow">Built for enterprises that already have agents everywhere — not for the ones still deciding whether to build them.</p>
+    <ul class="circuits">
+        <li class="circuit">
+          <p class="circuit__ref">C-01</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">Agent discovery</h3>
+            <p>Automatically finds every agent running across your org — built on Claude, GPT, Gemini, or custom frameworks. No manual registration required.</p>
+          </div>
+        </li>
+        <li class="circuit">
+          <p class="circuit__ref">C-02</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">Redundancy detection</h3>
+            <p>Semantic analysis surfaces overlapping agents across teams — like three departments each running their own meeting summarizer — and quantifies the duplicate spend.</p>
+          </div>
+        </li>
+        <li class="circuit">
+          <p class="circuit__ref">C-03</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">Scope drift monitoring</h3>
+            <p>Continuously checks whether agents still do what they were built to do — and flags drift before it becomes a compliance or cost problem.</p>
+          </div>
+        </li>
+        <li class="circuit">
+          <p class="circuit__ref">C-04</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">Cost attribution</h3>
+            <p>Maps LLM token usage to teams, agents and use cases. Your AI bill stops being a black box and becomes a line-item breakdown.</p>
+          </div>
+        </li>
+        <li class="circuit">
+          <p class="circuit__ref">C-05</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">Agent lineage map</h3>
+            <p>A live graph of how agents interact, what data they touch, and which business processes depend on them. Your org’s AI nervous system, mapped.</p>
+          </div>
+        </li>
+        <li class="circuit">
+          <p class="circuit__ref">C-06</p>
+          <div class="circuit__body">
+            <h3 class="circuit__name">EU AI Act readiness</h3>
+            <p>Auto-generates the audit trail and documentation your compliance team needs for the August 2026 high-risk obligations. Built for EMEA enterprises.</p>
+          </div>
+        </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--field" id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <h2 class="h2" id="who-h">Three people lose sleep over agent sprawl.</h2>
+    <p class="lede lede--narrow">AgentRack gives each of them a straight answer.</p>
+    <ul class="roles">
+      <li class="role">
+        <p class="role__role">CIO / CTO</p>
+        <p class="role__worry">“I don’t even know how many agents we’re running.”</p>
+        <p class="role__answer">A complete, always-current registry of every agent across every platform — with an owner attached to each one.</p>
+      </li>
+      <li class="role">
+        <p class="role__role">CFO</p>
+        <p class="role__worry">“Our AI spend doubled and nobody can tell me why.”</p>
+        <p class="role__answer">Token-level cost attribution by team and use case, plus the euro figure on duplicate agents doing the same job twice.</p>
+      </li>
+      <li class="role">
+        <p class="role__role">Head of AI / Compliance</p>
+        <p class="role__worry">“The EU AI Act hits in August and we have no audit trail.”</p>
+        <p class="role__answer">Continuous monitoring with auto-generated documentation — so the audit is a download, not a fire drill.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--plate" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 class="h2" id="how-h">Live in 30 minutes. Insights from day one.</h2>
+    <p class="lede lede--narrow">No agents to rebuild, no data to migrate. AgentRack connects to what you already have.</p>
+    <ol class="procedure">
+      <li class="step">
+        <p class="step__mark">Step 01</p>
+        <h3 class="step__name">Connect your systems</h3>
+        <p class="step__body">Connect via API, MCP, or native integrations with Azure, Google Workspace, Slack, ServiceNow, and GitHub. Setup takes under 30 minutes.</p>
+      </li>
+      <li class="step">
+        <p class="step__mark">Step 02</p>
+        <h3 class="step__name">We scan and map</h3>
+        <p class="step__body">AgentRack crawls API logs, webhook registrations and LLM usage to build a complete living registry of every agent in your organisation.</p>
+      </li>
+      <li class="step">
+        <p class="step__mark">Step 03</p>
+        <h3 class="step__name">Act on your debt score</h3>
+        <p class="step__body">Your AI technical debt score arrives with prioritised recommendations — which agents to consolidate, which to retire, which are drifting off-mission.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--field" id="founder" aria-labelledby="founder-h">
+  <div class="wrap">
+    <h2 class="h2 h2--tight" id="founder-h">Why this exists.</h2>
+    <figure class="nameplate">
+      <blockquote class="nameplate__quote">
+        <p>I’ve spent 13+ years selling and architecting enterprise software across EMEA. In the last year, every customer conversation changed: everyone is building agents, and <strong>no one can see what they’ve built</strong>.</p>
+        <p>The companies that solved technical debt won the last decade. The ones that solve agent debt will win this one. That’s why I’m building AgentRack.</p>
+      </blockquote>
+      <figcaption class="nameplate__caption">
+        <span class="nameplate__name">Varun Kukreja</span>
+        <span class="nameplate__meta">Founder, AgentRack · Amsterdam</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band band--field-deep" id="pricing" aria-labelledby="pricing-h">
+  <div class="wrap">
+    <h2 class="h2" id="pricing-h">Priced by agents monitored.</h2>
+    <p class="lede lede--narrow">Because that is where the value scales. Audit first, govern second.</p>
+    <div class="rates">
+      <div class="rate">
+        <p class="rate__flag" aria-hidden="true">&nbsp;</p>
+        <h3 class="rate__name">Agent Audit</h3>
+        <p class="rate__price">Free<span class="rate__period">one-time</span></p>
+        <p class="rate__desc">The wedge. We map your estate, you keep the findings.</p>
+        <ul class="rate__list">
+          <li>Up to 50 agents discovered</li>
+          <li>Redundancy and drift report</li>
+          <li>Debt score baseline</li>
+          <li>Recoverable-spend estimate</li>
+          <li>Readout call with findings</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#audit">Claim audit</a>
+      </div>
+      <div class="rate rate--rec">
+        <p class="rate__flag"><span class="lamp lamp--live" aria-hidden="true"></span>Recommended</p>
+        <h3 class="rate__name">Growth</h3>
+        <p class="rate__price">€1,500<span class="rate__period">/ month</span></p>
+        <p class="rate__desc">Continuous governance for scaling agent estates.</p>
+        <ul class="rate__list">
+          <li>Up to 100 agents monitored</li>
+          <li>Live discovery scans</li>
+          <li>Redundancy and drift alerts</li>
+          <li>Cost attribution by team</li>
+          <li>Slack and email alerts</li>
+          <li>Quarterly optimisation review</li>
+        </ul>
+        <a class="btn btn--ink btn--block" href="#audit">Start with audit</a>
+      </div>
+      <div class="rate">
+        <p class="rate__flag" aria-hidden="true">&nbsp;</p>
+        <h3 class="rate__name">Enterprise</h3>
+        <p class="rate__price">Custom<span class="rate__period">annual</span></p>
+        <p class="rate__desc">For estates past 100 agents — and audit-ready compliance.</p>
+        <ul class="rate__list">
+          <li>Unlimited agents</li>
+          <li>EU AI Act compliance pack</li>
+          <li>SSO / SAML and audit logs</li>
+          <li>Custom integrations (MCP, API)</li>
+          <li>Dedicated success manager</li>
+          <li>On-prem / EU data residency</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="mailto:hello@agentrack.io?subject=AgentRack%20Enterprise">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--plate" id="audit" aria-labelledby="audit-h">
+  <div class="wrap audit__grid">
+    <div class="audit__intro">
+      <h2 class="h2" id="audit-h">Get the audit before the auditors do.</h2>
+      <p class="lede">Free agent audit for the first 20 enterprise teams. We map your agent estate, you keep the findings — whatever you decide.</p>
+      <p class="audit__note">No spam. No sales calls unless you ask for one.</p>
+    </div>
+    <div class="slip">
+      <p class="slip__head">Audit request — AgentRack</p>
+      <form class="audit" id="audit-form" novalidate>
+        <div class="field">
+          <label class="field__label" for="email">Work email</label>
+          <input class="field__input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-describedby="form-msg">
+        </div>
+        <button class="btn btn--teal btn--block" type="submit" id="audit-btn">Claim my audit</button>
+      </form>
+      <p class="audit__msg" id="form-msg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <svg class="mark__glyph" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="4" y="7" width="36" height="7" rx="2.5" class="bar-dim"/>
+        <rect x="4" y="18.5" width="36" height="7" rx="2.5" class="bar-live"/>
+        <rect x="4" y="30" width="36" height="7" rx="2.5" class="bar-dim"/>
+      </svg>
+      <span class="mark__word">Agent<span class="mark__r">Rack</span></span>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="#product">Product</a>
+      <a href="#who">Who it’s for</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:hello@agentrack.io">Contact</a>
+    </nav>
+    <p class="footer__legal">© 2026 AgentRack · agentrack.io · Amsterdam, NL</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
