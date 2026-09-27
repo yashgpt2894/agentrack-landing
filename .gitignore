@@ -1,0 +1,4 @@
+# Working artifacts, not part of the published site
+.impeccable/
+.infy/
+.DS_Store
